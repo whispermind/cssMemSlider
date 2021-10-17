@@ -7,7 +7,7 @@ body{
 }
 .slider{
   width: 70vw;
-  height: 65vh;
+  height: 67vh;
   overflow-x: hidden;
 }
 input[name="hide"]{
@@ -35,6 +35,8 @@ input[name="hide"]{
   transform: translate(0);
   order: 1;
   opacity: 1;
+  font-size: 1rem;
+  margin-top: 2%;
 }
 
 
@@ -90,6 +92,8 @@ input[name="hide"]{
   transform: translateX(-1000%);
   transition: opacity 1s ease-in-out;
   opacity: 0;
+  font-size: 0;
+  display: inline-block;
 }
 @media (max-width: 1024px){
   .controls{
@@ -97,8 +101,5 @@ input[name="hide"]{
   }
   .thumbs{
     justify-content: center;
-  }
-  .description{
-    margin-top: 5%;
   }
 }
