@@ -82,4 +82,8 @@ body > div:first-child::before{
   .description{
     margin-top: 20px;
   }
+  body > div:first-child::before{
+    width: 120px;
+    height: 120px;
+    top: -110px;
 }
