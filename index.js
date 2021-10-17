@@ -37,5 +37,4 @@ class Slider {
     thumb.classList.add('thumb-active');
   }
 }
-//ojb
 let slider = new Slider(document.querySelector('.slider'));
