@@ -1,0 +1,105 @@
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 95vh;
+}
+.slider{
+  width: 70vw;
+  height: 67vh;
+  overflow-x: hidden;
+}
+input[name="hide"]{
+  visibility: hidden;
+}
+#second:checked ~ .slider__container{
+  transform: translateX(-100%);
+}
+#third:checked ~ .slider__container{
+  transform: translateX(-200%);
+}
+#fourth:checked ~ .slider__container{
+  transform: translateX(-300%);
+}
+#first:checked ~ .controls label[for="first"] > span,
+#second:checked ~ .controls label[for="second"] > span,
+#third:checked ~ .controls label[for="third"] > span,
+#fourth:checked ~ .controls label[for="fourth"] > span{
+  background-color: darkred;
+}
+#first:checked ~ .controls .first,
+#second:checked ~ .controls .second,
+#third:checked ~ .controls .third,
+#fourth:checked ~ .controls .fourth{
+  transform: translate(0);
+  order: 1;
+  opacity: 1;
+  font-size: 1rem;
+  margin-top: 2%;
+}
+
+
+.slider__container{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 70vw;
+  height: 50vh;
+  transition: transform 1s ease-in-out;
+}
+.slider img{
+  width: 70vw;
+  height: 50vh;
+  object-fit: cover;
+}
+.controls{
+  display: flex;
+  flex-direction: row-reverse;
+  width: 70vw;
+  margin-top: 2%;
+}
+.thumbs{
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+.thumb-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.thumb-container label:checked .thumb{
+  background-color: darkred;
+}
+.thumb-container:hover .thumb{
+  background: wheat;
+}
+.thumb-container:active .thumb{
+  background: sienna;
+}
+
+.thumb{
+  padding: .5px 8px;
+  background-color: black;
+  border-radius: 50%;
+  margin-left: 2%;
+  cursor: pointer;
+}
+.description{
+  transform: translateX(-1000%);
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  font-size: 0;
+  display: inline-block;
+}
+@media (max-width: 1024px){
+  .controls{
+    flex-direction: column;
+  }
+  .thumbs{
+    justify-content: center;
+  }
+}
