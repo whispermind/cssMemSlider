@@ -1,0 +1,85 @@
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 95vh;
+}
+body > div:first-child{
+  position: relative;
+}
+body > div:first-child::before{
+  content: '';
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  z-index: 99;
+  background-image: url(./img/pngwing.com.png);
+  background-size: cover;
+  top: -165px;
+  left: -50px;
+}
+.slider{
+  width: 70vw;
+  height: 65vh;
+  overflow-x: hidden;
+}
+.slider__container{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 70vw;
+  height: 50vh;
+}
+.slider img{
+  width: 70vw;
+  height: 50vh;
+  object-fit: cover;
+}
+.controls{
+  display: flex;
+  flex-direction: row-reverse;
+  width: 70vw;
+  margin-top: 20px;
+}
+.thumbs{
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+.thumb-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.thumb{
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+.thumb-active{
+  background-color: darkred;
+}
+.thumb:hover{
+  background: wheat;
+}
+.thumb:active{
+  background-color: sienna;
+}
+.description{
+  transition: opacity .5s ease-in-out;
+}
+@media (max-width: 1024px){
+  .controls{
+    flex-direction: column;
+  }
+  .thumbs{
+    justify-content: center;
+  }
+  .description{
+    margin-top: 20px;
+  }
+}
